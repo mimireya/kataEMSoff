@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>救急上官用マニュアル</title>
+  <style>
+      body { width: 1200px; margin: 5px auto; background-color: black;}
+      header, nav, section, footer, article {
+        display:block; border:1px solid #ccc; margin: 5px;  background: #ffc3c3;
+      }
+      article { background: rgba(255, 255, 255, 0.671); }
+      header { text-align:center; padding:5px 0 10px 0; color: rgb(0, 0, 0) }
+      header ul, header li { list-style-type:none; display:inline; padding: 0 5px; font-weight: bolder;}
+      .flexbox { display:flex; margin: 3px; border:1px solid #c99; }
+      nav { flex:1; font-size: small; color: rgb(0, 0, 0); }
+      section { flex:2; flex-basis: 450px; }
+      nav li { list-style-type:none; margin-left: -2em; font-size: large; font-weight: bolder;}
+      footer { text-align: center; }
+      .tab-wrap {display: flex; flex-wrap: wrap; margin:20px 0;}
+      .tab-wrap:after {content: ''; width: 100%; height: 3px; background: rgb(255, 0, 0); display: block; order: -1;}
+      .tab-label {color: White; background: LightGray; font-weight: bold; text-shadow: 0 -1px 0 rgba(0,0,0,.2); white-space: nowrap; text-align: center; padding: 10px .5em; order: -1; position: relative; z-index: 1; cursor: pointer; border-radius: 5px 5px 0 0; flex: 1;}
+      .tab-label:not(:last-of-type) {margin-right: 5px;}
+      .tab-content {width: 100%; height: 0; overflow: hidden; opacity: 0;}
+      /* アクティブなタブ */
+      .tab-switch:checked+.tab-label {background: rgb(255, 0, 0);}
+      .tab-switch:checked+.tab-label+.tab-content {height: auto; overflow: auto; padding: 15px; opacity: 1; transition: .5s opacity; box-shadow: 0 0 3px rgba(0, 0, 0, 0);}
+      /* ラジオボタン非表示 */
+      .tab-switch { display: none;}
+      .nya-copy-button { display: flex; flex: 1; flex-direction: row; margin: auto; padding: 10px 20px; border: 2px solid #555; background-color: #fff; color: #333; font-size: 16px; cursor: pointer; border-radius: 5px; transition: all 0.3s ease; }
+      .nya-copy-button:hover { color: #05a5ab; background-color: #e0f7f9; border-color: #48c3c7; }
+      .nya-copy-button__icon { margin-right: 8px; }
+      .nya-message { text-align: center; color: green; display: none;}
+  </style>
+</head>
+<body>
+  <header>
+      <h1>KataCity救急上官向けサイト</h1>
+      <ul>
+        <li><a href="https://katacity.notion.site/9c11b524a6e64e68a789f92f305c282e?v=04155e04591d48849a930850a954f9d0">KataCityNotion</a></li>
+        <li><a href="https://concise-output-f22.notion.site/KataCity-1c0d515c53a980689cbcf5c80d594554">救急専用Notion</a></li>
+      </ul>
+  </header>
+  <div class="flexbox">
+    <nav>
+      <h1>テンプレート</h1>
+      <ul>
+        <li><p><a href="https://discord.com/channels/1271001669840273460/1271070671966830623/1452309678402048051">テンプレツール</a><span style="font-size: x-small;">作・狐夜ゆらん</span>
+        <br><span style="font-size: small;">ダウンロードして使ってね</span></p></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1898454792#gid=1898454792">テンプレ管理</a></li>
+      </ul>
+      <br>
+      <h1>直リンク</h1>
+      <ul>
+        <li><a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=161258027#gid=161258027">人員・ボーナス管理</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=2142701125#gid=2142701125">ランク改定</a></li>
+        <br>
+        <li><a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1JCsTKcnkMKR8pPIxupldGokyMXXQwHVtblheGD_BPi8/edit?gid=0#gid=0">白パス確認シート</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1420132904#gid=1420132904">書類評価</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1140288093#gid=1140288093">面談評価</a></li>
+        <li><a href="https://drive.google.com/drive/folders/18tIdCUHpEl38yTs9SvsooU-28Ac4O50i">面談用ドライブ</a></li>
+         <br>
+        <li><a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=157660433#gid=157660433">面談日程</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=2086838371#gid=2086838371">体験日程</a></li>
+        <br>
+        <br>
+        <li><a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=202122055#gid=202122055">社用車情報</a></li>
+      </ul>
+    </nav>
+    <section>
+      <span style="font-size: small; color: rgb(0, 0, 0); text-align: center;"><h1>参考マニュアル</h1></span>
+      <div class="tab-wrap">
+      <input id="TAB02-01" type="radio" name="TAB02" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB02-01">常時応募対応一覧</label>
+      <div class="tab-content">
+        <article>
+        <span style="font-size: x-small; text-align: center;"><h1>チケットが発行されたら</h1></span>
+        <article>
+        <span style="font-weight: bold;"><p>Discordを開いてチケットNo.とユーザーIDを確認し、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>を開いて<span style="color: brown;">Discordで確認したチケットNo.と同一のチケットNo.と、そのチケットと同一枠にDiscordユーザーIDをそれぞれ入力</span>し、<span style="color: brown;">担当を自分の名前に変更</span>します</p></span>
+       </article>
+      </article>
+      <article>
+        <span style="font-size: x-small; text-align: center;"><h1>応募フォームが送られてきたら</h1></span>
+        <article>
+        <span style="font-weight: bold;"><p>DiscordのチケットNo.と同一のフォームを確認し、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>に確認したチケットNo.と同一枠に<span style="color: brown;">名前・市民IDがそれぞれ入力されているか確認</span>します</p></span>
+        <span style="font-weight: bold;"><p>その際に<a href="https://docs.google.com/spreadsheets/d/1JCsTKcnkMKR8pPIxupldGokyMXXQwHVtblheGD_BPi8/edit?gid=0#gid=0">白パス確認シート</a>で白パスの有無・正誤と取得日時の確認をし、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>に<span style="color: brown;">確認したチケットNo.と同一枠の白パスの有無の変更</span>をします</p>
+        <span style="font-weight: bold;"><p>※この時点で市民IDが違っていれば、正しいIDと誤っているIDをわかるように<span style="color: brown;">備考欄</span>に残しておき、名前等に変更があった場合も<span style="color: brown;">備考欄</span>に残しておくこと</p></span>
+        </article>
+      </article>
+      <article>
+        <span style="font-size: x-small; text-align: center;"><h1>毎月1日と15日<span style="font-size: xx-small;">※例外あり</span>に応募受理作業をします</h1></span>
+        <article>
+        <span style="font-weight: bold;"><p>この時点で<span style="text-decoration: underline; color: rgb(255, 0, 0);">フォームが届いていない・チケットに名前を書いていない・フォームに間違いがある等</span>があれば<span style="color: rgb(255, 0, 0);">書類不備</span>となります</p></span>
+        <span style="font-weight: bold;"><p>書類不備がなければ、</span><span style="color: brown;">確認したチケットNo.と同一のDiscordのチケットに応募受理通知</span>を送り、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>の<span style="color: brown;">担当を自分の名前に変更</span>します</p></span>
+        <span style="font-weight: bold;"><p>書類不備があれば、</span><span style="color: brown;">確認したチケットNo.と同一のDiscordのチケットに不合格通知</span>を送り、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>の<span style="color: brown;">状態を書類不合格</span>、<span style="color: brown;">チケットの状態を不合格通知済みに変更</span>し、<span style="color: brown;">担当を自分の名前に変更</span>します</p></span>
+        <span style="font-weight: bold;"><p>チケットが削除された場合は、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>の<span style="color: brown;">状態を書類不合格、チケットの状態を削除済みに変更、不合格日時を入力</span>し、<span style="color: brown;">担当を自分の名前に変更</span>します</p></span>
+        </article>
+      </article>
+        <article>
+        <span style="font-size: x-small; text-align: center;"><h1>書類評価</h1></span>
+        <article>
+        <span style="font-weight: bold;"><p>全員が<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1420132904#gid=1420132904">書類評価</a>で応募書類を確認し、それぞれ評価します</p></span>
+        <span style="font-weight: bold;"><p></p></span>
+      </article>
+      </article>
+      <article>
+        <span style="font-size: x-small; text-align: center;"><h1>面談と面談評価</h1></span>
+        <article>
+        <span style="font-weight: bold;"><p>質問者と書記に分かれられるようなるべく2人以上で、全員が動画を撮れる状態にして<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1140288093#gid=1140288093">面談評価</a>の質問項目に従って面談を行います</p></span>
+        <span style="font-weight: bold;"><div>面談終了後、<a href="https://drive.google.com/drive/folders/18tIdCUHpEl38yTs9SvsooU-28Ac4O50i">面談用ドライブ</a>に動画ファイル名を<span style="color: brown;">日付-チケット番号-名前</span>に変更してアップロード、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>の<span style="color: brown;">面談日時を入力し、担当を自分の名前に変更</span>します</span></div></span>
+        <span style="font-weight: bold;"><div><span style="font-weight: lighter; font-size: small;">※あすたちんのみ、動画ファイルをYouTubeにアップロードし、動画URLを<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1140288093#gid=1140288093">面談評価</a>に記入する</div></span>
+        <span style="font-weight: bold;"><p>全員が<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1140288093#gid=1140288093">面談評価</a>で質疑応答と動画を確認し、それぞれ評価します</p></span>
+      </article>
+      </article>
+      <article>
+        <span style="font-size: x-small; text-align: center;"><h1>全員の書類・面談評価が終わったら</h1></span>
+        <article>
+        <span style="font-weight: bold;"><p>書類または面談評価で、</span><span style="color: brown;">2人以上❌️が付いていないチケットNo.と同一のDiscordのチケットに書類または面談通過通知</span>を送り、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>の<span style="color: brown;">担当を自分の名前に変更</span>します</p></span>
+        <span style="font-weight: bold;"><p>2人以上❌️が付いていた場合、</span><span style="color: brown;">2人以上❌️が付いているチケットNo.と同一のDiscordのチケットに不合格通知</span>を送り、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>の<span style="color: brown;">状態を書類または面談不合格、チケットの状態を不合格通知済みに変更、不合格日時を記入</span>し、<span style="color: brown;">担当を自分の名前に変更</span>します</p></span>
+        </article>
+       </article>
+      <article>
+        <span style="font-size: x-small; text-align: center;"><h1>面談・体験日程を決めたら</h1></span>
+        <article>
+        <span style="font-weight: bold;"><p>書類または面談通過をした人のチケットNo.と同一のDiscordのチケットに<span style="color: brown;">1～2週間程度の日付を記載して面談者または体験者の希望を採り</span>、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>の<span style="color: brown;">チケットの状態を面談または体験日程調整中に変更</span>し、<span style="color: brown;">担当を自分の名前に変更</span>します</p></span>
+        <span style="font-weight: bold;"><p><a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=157660433#gid=157660433">面談日程</a>または<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=2086838371#gid=2086838371">体験日程</a>に<span style="color: brown;">自分たちの予定をそれぞれ入力</span>し、希望日の返信が来たら<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=157660433#gid=157660433">面談日程</a>または<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=2086838371#gid=2086838371">体験日程</a>に面談者または体験者の<span style="color: brown;">希望日程を入力</span>します</p></span>
+        <span style="font-weight: bold;"><p>日程が確定したら</span><span style="color: brown;">確認したチケットNo.と同一のDiscordのチケットに面談日または体験日の確定日程</span>を送り、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>の<span style="color: brown;">チケットの状態を面談待機または体験待機に変更</span>し、<span style="color: brown;">担当を自分の名前に変更</span>します</p></span>
+        <span style="font-weight: bold;"><div>もしも応募辞退された場合は、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>の<span style="color: brown;">状態を応募辞退、チケットの状態を応募辞退に変更、不合格日時を入力</span>し、<span style="color: brown;">担当を自分の名前に変更</span>します</div></span>
+        <span style="font-weight: lighter; font-size: small;"><div>この時面談・体験日程が決まっていた場合、シートの内容がズレてしまうため<span style="color: brown; text-decoration: underline;">チケットの状態を応募辞退に変更、不合格日時を入力のみ</span>にして全員の日程が終わったら上記の作業をする</div></span>
+        <br>
+        </article>
+      </article>
+      <article>
+        <span style="font-size: x-small; text-align: center;"><h1>体験が終わったら</h1></span>
+        <article>
+        <span style="font-weight: bold;"><p>体験の内容やこれまでの素行・態度等に特に問題がなければ<span style="color: brown;">合格者のチケットNo.と同一のDiscordのチケットに体験通過通知</span>を送り、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>の<span style="color: brown;">状態を体験通過、チケットの状態を体験通過通知済みに変更</span>し、<span style="color: brown;">担当を自分の名前に変更</span>します</p></span>
+        <span style="font-weight: bold;"><p>何か問題等見られた場合や引っかかりを覚えていたりした場合は上官内で相談して決めて、<span style="color: brown;">不合格者のチケットNo.と同一のDiscordのチケットに不合格通知</span>を送り、<a href="https://docs.google.com/spreadsheets/d/1kHJ-mV53SdkvNe2DNjk-7tmM_Nso3m0sjDTF-Gyyacg/edit?gid=1900459045#gid=1900459045">応募チケット管理</a>の<span style="color: brown;">状態を体験不合格、チケットの状態を不合格通知済みに変更</span>し、<span style="color: brown;">担当を自分の名前に変更</span>します</p></span>
+        </article>
+      </article>
+      <article>
+        <span style="font-size: x-small; text-align: center;"><h1>まとめ</h1></span>
+        <article>
+        <span style="font-weight: bold;"><p>ざっくり流れだと <span style="color: rgb(19, 55, 153);">チケット作成</span>→<span style="color: rgb(80, 0, 0);">応募フォーム確認</span>→<span style="color: rgb(209, 101, 0);">応募チケット管理入力</span>→<span style="color: rgb(0, 128, 28);">書類評価</span>→<span style="color: rgb(42, 157, 165);">合否通知</span>→<span style="color: rgb(209, 101, 0);">応募チケット管理入力</span>→<span style="color: rgb(82, 72, 219);">日程作成通知</span>→<span style="color: rgb(42, 165, 83);">面談</span>→<span style="color: rgb(101, 165, 42);">面談評価</span>→<span style="color: rgb(42, 157, 165);">合否通知</span>→<span style="color: rgb(209, 101, 0);">応募チケット管理入力</span>→<span style="color: rgb(82, 72, 219);">日程作成通知</span>→<span style="color: rgb(0, 158, 40);">体験</span>→<span style="color: rgb(42, 157, 165);">合否通知</span>→<span style="color: rgb(255, 35, 35);">採用</span>→<span style="color: rgb(209, 101, 0);">応募チケット管理入力</span>　になります</p></span>
+        <span style="font-weight: bold;"><p><span style="color: rgb(42, 157, 165);">合否通知</span>→<span style="color: rgb(209, 101, 0);">応募チケット管理入力</span>の流れで チケット削除作業 も挟まりますので忘れないようにしましょう</p></span>
+        </article>
+      </div>
+      <input id="TAB02-02" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-02">体験</label>
+      <div class="tab-content">
+        <article>
+        <span style="font-size: x-small; text-align: center;"><h1>体験開始</h1></span>
+         <article>
+          <br>
+        <span style="font-weight: bold; font-size: large;"><div>①白パス確認</div></span>
+          <span style="font-weight: bold;"><div>・IDカードを提示してもらって、白パスが有効かどうかを確認する</div></span>
+        <br>
+        <span style="font-weight: bold; font-size: large;"><div>②雇用</div></span>
+          <span style="font-weight: bold;"><div>・HOMEキーから本日のIDを確認して雇用</div></span>
+        <br>
+        <span style="font-weight: bold; font-size: large;"><div>③救急バッグを渡して、道具の使い方を教える</div></span>
+          <span style="font-weight: bold;"><div>・バッグは無くしたら渡さないで共有ロッカーから取り出してもらう</div></span>
+          <span style="font-weight: bold;"><div>・ここで誰かを実験体にし、心の目で診断できること、除細動器で蘇生、アイスピックが鈍器、ピンセットが銃創、縫合セットが出血、火傷クリームが火傷、救急キットは体力回復に使えることを説明する</div></span>
+          <span style="font-weight: bold;"><div>・救急専用Notionにも書いてあることを伝える</div></span>
+        <br>
+        <span style="font-weight: bold; font-size: large;"><div>④報告書の使い方を教える</div></span>
+          <span style="font-weight: bold;"><div>・タイプに、治療もしくは蘇生を記入して、関与した市民をタグ付けし、きちんと保存することを教える</div></span>
+          <span style="font-weight: bold;"><div>・救急専用Notionにも書いてあることを伝える</div></span>
+        <br>
+        <span style="font-weight: bold; font-size: large;"><div>④請求書の説明をする</div></span>
+          <span style="font-weight: bold;"><div>・請求書メニューからそれぞれどのように請求するか教える</div></span>
+          <span style="font-weight: bold;"><div>・初心者対応と事件・牢屋対応の請求の違いをそれぞれ説明する</div></span>
+          <span style="font-weight: bold;"><div>・院外のダウンは基本的に救急が持ち込むことはないこと、ダウン要請を出した時点で院外扱いになることを説明する</div></span>
+        <br>
+        <span style="font-weight: bold; font-size: large;"><div>⑤無線に入ってもらう</div></span>
+          <span style="font-weight: bold;"><div>・無線機を持っているか確認し、持っていなかったら渡して無線番号1番に入ってもらう</div></span>
+          <span style="font-weight: bold;"><div>・/callsing か救急タブレットを使って A- から始まるコールサインを設定してもらう</div></span>
+          <span style="font-weight: bold;"><div>・無線を使えてるかの確認がてら軽く挨拶してもらい、体験スタートしてもらう</div></span>
+     　 </article>
+      </article>
+      <article>
+        <span style="font-size: x-small; text-align: center;"><h1>体験終了</h1></span>
+        <article>
+        <br>
+        <span style="font-weight: bold; font-size: large;"><div>①救急道具の返却と衣装の変更</div></span>
+          <span style="font-weight: bold;"><div>・インベントリ内や個人ロッカーの中から救急道具を返却してもらい、個人ロッカーの中身は全部出してもらう</div></span>
+          <span style="font-weight: bold;"><div>・この時、救急道具が残ってないか身体の中身を調べさせてもらってもいいです</div></span>
+          <span style="font-weight: bold;"><div>・ロッカーで着替えてもらう</div></span>
+        <br>
+        <span style="font-weight: bold; font-size: large;"><div>②解雇</div></span>
+          <span style="font-weight: bold;"><div>・HOMEキーから該当の人を解雇する</div></span>
+        <br>
+        <span style="font-weight: bold; font-size: large;"><div>③合否について</div></span>
+          <span style="font-weight: bold;"><div>・改めてチケットで連絡するのと、通知には数日かかることを伝える</div></span>
+     　 </article>
+      </article>
+      <article>
+        <span style="font-size: x-small; text-align: center;"><h1>補足</h1></span>
+        <article>
+          <br>
+         <span style="font-weight: bold; font-size: large;"><div>～体験は2日間～</div></span>
+          <span style="font-weight: bold;"><div>・よほど希望日の日程が合わない限りは体験1日目と体験2日目の間を1日以上空くように日程を組む</div></span>
+          <span style="font-weight: bold;"><div>・体験1日目は完全ツーマンセル</div></span>
+          <span style="font-weight: bold;"><div>・自由出勤日/体験2日目は上官より許可が下りた場合にツーマンセル解除※ただし牢屋対応はツーマンセル厳守</div></span>
+        <br>
+         <span style="font-weight: bold; font-size: large;"><div>～ツーマンセル解除条件～</div></span>
+          <span style="font-weight: bold;"><div>・自由出勤含め2日間救急業務を行い、2日間分の報告書があることを確認していること</div></span>
+          <span style="font-weight: bold;"><div>・上官がツーマンセルでの付き添いを行い最終的な判断を下すこと</div></span>
+        <br>  
+        <span style="font-weight: bold; font-size: large;"><div>～自由出勤について～</div></span>
+          <span style="font-weight: bold;"><div>・研修医以上の救急隊が5人以上いる場合出勤可能</div></span>
+          <span style="font-weight: bold;"><div>・研修医以上の救急隊が4人以下になる場合は退勤を促す</div></span>
+          <span style="font-weight: bold;"><div>・21時～25時のゴールデンタイム時に限る</div></span>
+        <br>
+        </article>
+      </article>
+      </div>
+      <input id="TAB02-03" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-03">採用</label>
+      <div class="tab-content">
+       <article>
+        <span style="font-size: x-small; text-align: center;"><h1>採用通知後</h1></span>
+         <article>
+          <br>
+          <span style="font-weight: bold; font-size: large;"><div>①Discordで救急ロールの付与</div></span>
+           <span style="font-weight: bold;"><div>・現状医局長ランクはできないので副病院長ランク以上にお願いします</div></span>
+          <br>
+          <span style="font-weight: bold; font-size: large;"><div>②HOMEキーから本日のIDを確認して雇用</div></span>
+           <span style="font-weight: bold;"><div>・実習生につけ直す</div></span>
+           <span style="font-weight: bold;"><div>・この時、ランク付与・変更へ記入も忘れずに</div></span>
+          <br>
+          <span style="font-weight: bold; font-size: large;"><div>③救急バッグの手渡し</div></span>
+           <span style="font-weight: bold;"><div>・購入できる場所を教え、購入させてもいい</div></span>
+           <span style="font-weight: bold;"><div>・経費申請してきたらパンチ</div></span>
+          <br>
+        </article>
+       </article>
+      <article>
+        <span style="font-size: x-small; text-align: center;"><h1>救急ロール付与後</h1></span>
+        <article>
+          <br>
+         <span style="font-weight: bold; font-size: large;"><div>①IBANの記入</div></span>
+         <br>
+         <span style="font-weight: bold; font-size: large;"><div>②救急車の購入案内・記入</div></span>
+           <span style="font-weight: bold;"><div>・最初の1台のみ満額経費申請可能な事を伝える※ただしバスは最初の1台に選んではいけないことも言う</div></span>
+           <span style="font-weight: bold;"><div>・最初は個人車両になるので社用車として登録させ、車両の名前を変更してもらう</div></span>
+           <span style="font-weight: bold;"><div>・カスタム等は詳しい人に任せてOK</div></span>
+         <br>
+         <span style="font-weight: bold; font-size: large;"><div>③各チャンネルの説明</div></span>
+           <span style="font-weight: bold;"><div>・簡単報告だけは業務において必要なことが書かれているので見てもらうようにする</div></span>
+           <span style="font-weight: bold;"><div>・他は自分がしたいと思ったところとか適当に</div></span>
+         <br>
+         <span style="font-weight: bold; font-size: large;"><div>④チケットを閉じてもらう</div></span>
+           <span style="font-weight: bold;"><div>・口頭で言い忘れた場合などは、チケットに閉じてもらうようテンプレを送る</div></span>
+         <br>
+        </article>
+      </article>
+      </div>
+      <input id="TAB02-04" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-04">おまけ</label>
+      <div class="tab-content">
+        <article>
+        <span style="font-size: small; text-align: center;"><h1>主に簡単報告とかに使えるテンプレ</h1></span>
+        <span style="font-weight: bold; text-align: center;"><p>ボタンを押すとそれぞれ枠の文字に沿った内容のテンプレがクリップボードに出力されます
+          <br><span style="color: rgb(231, 35, 84); font-size: larger;">自分で編集してから使ってね</span></p></span>
+        <div style="position: centor">
+          <p class="nya-message" id="copyMessage">コピーOK！</p>
+        <div style="position: centor;">
+         <button class="nya-copy-button" onclick="copyURL(this)" data-url=" ```
+# ランク改正のお知らせ
+改正は、これまでの勤務数や勤務態度を基準に行っています
+次回のランク改正は約2～4週間を目途に実施する予定です
+``` ">
+         <span>ランク改正のお知らせ</span>
+         </button>
+        <div style="position: centor">
+        <button class="nya-copy-button" onclick="copyURL(this)" data-url=" ```
+# 解雇予定通知
+- name
+- name
+
+流動性のある組織運営を行うため、以下の条件を満たさない場合解雇を行います。
+恒常的な出勤が見られない場合
+事前に街に起きれない等の事前連絡がない場合
+
+何かしら事情がある場合はご連絡ください。
+``` ">
+         <span>解雇予定通知</span>
+         </button>
+        <div style="position: centor">
+        <button class="nya-copy-button" onclick="copyURL(this)" data-url=" ```
+(～に伴い、)Notionの更新を行いました。
+
+- [　リンク先ページ名　](　リンク先URL　)
+  - 更新箇所など
+  - 同上
+``` ">
+         <span>Notion更新のお知らせ</span>
+         </button>
+         <button class="nya-copy-button" onclick="copyURL(this)" data-url=" ```
+
+# イベント救急依頼のお知らせ
+イベント主催者側から救急隊派遣依頼が来ています
+そのためイベントに協力する救急隊を募集します
+イベント詳細は以下の通りです
+
+## [ イベント名 ]( イベントリンク )
+
+- 予定日時
+    - MM/DD  HH:MM ～ 
+- 募集人数
+    - M名
+
+
+参加を希望する人はリアクションをつけてください
+派遣する救急隊の指名は数日後にメンション付きで送ります
+
+``` ">
+         <span>イベント依頼のお知らせ</span>
+         </button>
+        <div style="position: centor">
+        <button class="nya-copy-button" onclick="copyURL(this)" data-url="">
+         <span></span>
+         </button>
+        <div style="position: centor">
+        <button class="nya-copy-button" onclick="copyURL(this)" data-url="">
+         <span></span>
+         </button>  
+        </div>
+      
+　　　　</article>
+      </div>   
+      
+     </div>  
+
+      </div>  
+      
+      
+     
+        
+
+</div>
+        
+      </article>
+       
+    </section>
+  </div>
+  <footer>
+      by KataCity
+  </footer>
+  <script>
+    function copyURL(button) {
+    const url = button.getAttribute('data-url');
+    navigator.clipboard.writeText(url).then(() => {
+    const message = document.getElementById('copyMessage');
+    message.style.display = 'block';
+    setTimeout(() => {
+    message.style.display = 'none';
+    }, 2000);
+    }).catch(err => {
+    console.error('コピーに失敗しました:', err);
+    });
+    }
+   </script> 
+</body>
+</html>
